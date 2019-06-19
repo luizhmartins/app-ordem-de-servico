@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class Banco extends SQLiteOpenHelper {
 
     private static final String NOME_BANCO = "os";
-    private static final int VERSAO_BANCO = 1;
+    private static final int VERSAO_BANCO = 2;
 
     public Banco(Context context){
         super(context, NOME_BANCO, null, VERSAO_BANCO);
@@ -17,7 +17,7 @@ public class Banco extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS anotacoes ( " +
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS clientes ( " +
                 "  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , " +
                 "  nome TEXT , " +
                 "  telefone TEXT , " +
@@ -25,7 +25,7 @@ public class Banco extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
 }

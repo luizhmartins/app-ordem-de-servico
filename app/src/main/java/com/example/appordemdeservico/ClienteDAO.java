@@ -18,20 +18,20 @@ public class ClienteDAO {
         valores.put("endereco", cliente.getEndereco() );
 
         SQLiteDatabase db = banco.getWritableDatabase();
-        db.insert("anotacoes", null, valores);
+        db.insert("clientes", null, valores);
     }
 
     public static final void excluir(int idNota, Context context){
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getWritableDatabase();
-        db.delete("anotacoes", "id = "+idNota, null);
+        db.delete("clientes", "id = "+idNota, null);
     }
 
     public static final List<Cliente> listar(Context context){
         List<Cliente> lista = new ArrayList<>();
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();
-        String sql = "SELECT * FROM anotacoes ORDER BY id DESC ";
+        String sql = "SELECT * FROM clientes ORDER BY id DESC ";
         Cursor cursor = db.rawQuery(sql, null);
         if ( cursor.getCount() > 0 ){
             cursor.moveToFirst();
