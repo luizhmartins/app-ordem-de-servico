@@ -20,7 +20,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
     ListView lvLista;
     List<Cliente> lista;
     ArrayAdapter adapter;
@@ -52,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 final Cliente clienteSelecionado = lista.get(position);
                 AlertDialog.Builder alerta =
                         new AlertDialog.Builder(MainActivity.this);
-                alerta.setTitle("Excluir Cliente...");
-                alerta.setMessage("Confirma a exclusão do Cliente " +
+                alerta.setTitle("Excluir Anotação...");
+                alerta.setMessage("Confirma a exclusão da anotação " +
                         clienteSelecionado.getNome() + "?");
                 alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
@@ -81,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getBaseContext(), "Item clicado", Toast.LENGTH_SHORT).show();
 
-                //Intent intent = new Intent(ListaActivity.this, ProdutoActivity.class); // criar a classe produto activity
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, CadastroCliente.class); // criar a classe produto activity
+                startActivity(intent);
             }
         });
 
@@ -125,5 +124,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }
