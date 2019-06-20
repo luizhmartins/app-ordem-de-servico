@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.system.Os;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +29,8 @@ public class OrdemServicoDAO {
         db.delete("anotacoes", "id = "+idNota, null);
     }
 
-    public static final List<Cliente> listar(Context context){
-        List<Cliente> lista = new ArrayList<>();
+    public static final List<OrdemServico> listar2(Context context){
+        List<OrdemServico> lista = new ArrayList<>();
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();
         String sql = "SELECT * FROM anotacoes ORDER BY id DESC ";
@@ -41,9 +40,9 @@ public class OrdemServicoDAO {
             do{
                 OrdemServico os = new OrdemServico();
                 os.setId( cursor.getInt( 0 ) );
-                os.setIdcliente( cursor.getString(1));
+                os.setIdcliente( cursor.getInt(1));
                 os.setTipoServico( cursor.getString(2));
-                os.setDataServico( cursor.getString(3));
+                os.setDataServico( cursor.getDouble(3));
                 os.setValor( cursor.getString(4));
                 os.setDescricao( cursor.getString(5));
 

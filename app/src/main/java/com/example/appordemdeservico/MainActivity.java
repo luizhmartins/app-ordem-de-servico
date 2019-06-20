@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 final Cliente clienteSelecionado = lista.get(position);
                 AlertDialog.Builder alerta =
                         new AlertDialog.Builder(MainActivity.this);
-                alerta.setTitle("Excluir Anotação...");
-                alerta.setMessage("Confirma a exclusão da anotação " +
+                alerta.setTitle("Excluir Ordem de Servico...");
+                alerta.setMessage("Confirma a exclusão da Ordem de Servico " +
                         clienteSelecionado.getNome() + "?");
                 alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getBaseContext(), "Item clicado", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(MainActivity.this, CadastroCliente.class); // criar a classe produto activity
+                Intent intent = new Intent(MainActivity.this, ActOS.class);
                 startActivity(intent);
             }
         });
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void carregarLista(){
 
-        lista = ClienteDAO.listar(this);
+        lista = OrdemServicoDAO.listar2(this);
         adapter = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, lista );
         lvLista.setAdapter(adapter);
