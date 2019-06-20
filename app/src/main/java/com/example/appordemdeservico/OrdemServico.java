@@ -1,47 +1,5 @@
 package com.example.appordemdeservico;
 
-<<<<<<< HEAD
-public class OrdemServico {
-
-    private int Id;
-    private String Cliente;
-    private String Tipo;
-    private String Data;
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public String getCliente() {
-        return Cliente;
-    }
-
-    public void setCliente(String cliente) {
-        Cliente = cliente;
-    }
-
-    public String getTipo() {
-        return Tipo;
-    }
-
-    public void setTipo(String tipo) {
-        Tipo = tipo;
-    }
-
-    public String getData() {
-        return Data;
-    }
-
-    public void setData(String data) {
-        Data = data;
-    }
-}
-
-=======
 import java.util.Date;
 
 public class OrdemServico {
@@ -104,4 +62,3 @@ public class OrdemServico {
         this.descricao = descricao;
     }
 }
->>>>>>> 4791a9475cca8ca36e74a0ea4657557eaec1260f
