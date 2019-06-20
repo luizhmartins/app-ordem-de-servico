@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.system.Os;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,7 +16,7 @@ public class OrdemServicoDAO {
         ContentValues valores = new ContentValues();
         valores.put("cliente", os.getIdcliente() );
         valores.put("tipo", os.getTipoServico() );
-        valores.put("data", os.getDataServico() );
+        //valores.put("data", os.getDataServico() );
         valores.put("valor", os.getValor() );
         valores.put("descrição", os.getDescricao() );
 
@@ -32,6 +31,7 @@ public class OrdemServicoDAO {
     }
 
     public static final List<OrdemServico> listar(Context context){
+
         List<OrdemServico> lista = new ArrayList<>();
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();

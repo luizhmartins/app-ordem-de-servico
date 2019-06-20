@@ -1,7 +1,5 @@
 package com.example.appordemdeservico;
 
-import java.util.Date;
-
 public class OrdemServico {
 
     private int id;
@@ -61,4 +59,5 @@ public class OrdemServico {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
 }
