@@ -61,9 +61,6 @@ public class MainActivity extends AppCompatActivity {
                                 MainActivity.this);
                         carregarLista();
 
-                        //     lista.remove( position);
-                        //     adapter.notifyDataSetChanged();
-
                     }
                 });
                 alerta.setNeutralButton("Cancelar", null);

@@ -21,7 +21,6 @@ public class CadastroCliente extends AppCompatActivity {
         edtNome = (EditText)findViewById(R.id.edtNome);
         edtTelefone = (EditText)findViewById(R.id.edtTelefone);
         edtEndereco = (EditText)findViewById(R.id.edtEndereco);
-
         btnCadastro = (Button)findViewById(R.id.btnCadastro);
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
