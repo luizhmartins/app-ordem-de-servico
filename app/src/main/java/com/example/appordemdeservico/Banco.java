@@ -17,11 +17,20 @@ public class Banco extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS anotacoes ( " +
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS Cliente ( " +
                 "  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , " +
                 "  nome TEXT , " +
                 "  telefone TEXT , " +
                 "  endereco TEXT  ) " );
+
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS OrdemServico ( " +
+                "  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , " +
+                "  id_Cliente INTEGER NOT NULL , " +
+                "  tipoServico TEXT , " +
+                "  dataServico TEXT , " +
+                "  valor REAL , " +
+                "  descricao TEXT , " +
+                "  FOREIGN KEY (id_Cliente) REFERENCES Cliente(id)) " );
     }
 
     @Override
