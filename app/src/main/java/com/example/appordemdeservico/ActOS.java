@@ -10,6 +10,8 @@ public class ActOS extends AppCompatActivity {
     private EditText edtClienteOS;
     private EditText edtTipoOS;
     private EditText edtDataOS;
+    private EditText edtValorOS;
+    private EditText edtDescricaoOS;
     private Button btnSalvarOS;
 
     @Override
@@ -20,6 +22,8 @@ public class ActOS extends AppCompatActivity {
         edtClienteOS = (EditText)findViewById(R.id.edtClienteOS);
         edtTipoOS = (EditText)findViewById(R.id.edtTipoOS);
         edtDataOS = (EditText)findViewById(R.id.edtDataOS);
+        edtValorOS = (EditText)findViewById(R.id.edtValorOS);
+        edtDescricaoOS = (EditText)findViewById(R.id.edtDescricaoOS);
         btnSalvarOS = (Button)findViewById(R.id.btnSalvarOS);
     }
 }
