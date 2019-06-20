@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewCadastroOS" />
+        <activity
+            android:name=".ViewCadastroOS"
+            android:label="Criar Ordem De Serviço"></activity>
         <activity android:name=".ViewCadastroCliente" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:label="Ordem De Serviço"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
