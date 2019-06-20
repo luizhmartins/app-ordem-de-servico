@@ -7,7 +7,7 @@ public class OrdemServico {
     private int id;
     private int idcliente;
     private String tipoServico;
-    private Date dataServico;
+    private String dataServico;
     private double valor;
     private String descricao;
 
@@ -38,11 +38,11 @@ public class OrdemServico {
         this.tipoServico = tipoServico;
     }
 
-    public Date getDataServico() {
+    public String getDataServico() {
         return dataServico;
     }
 
-    public void setDataServico(Date dataServico) {
+    public void setDataServico(String dataServico) {
         this.dataServico = dataServico;
     }
 

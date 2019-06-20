@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.system.Os;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class OrdemServicoDAO {
@@ -21,30 +22,30 @@ public class OrdemServicoDAO {
         valores.put("descrição", os.getDescricao() );
 
         SQLiteDatabase db = banco.getWritableDatabase();
-        db.insert("anotacoes", null, valores);
+        db.insert("OrdemServico", null, valores);
     }
 
-    public static final void excluir(int idNota, Context context){
+    public static final void excluir(int idOS, Context context){
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getWritableDatabase();
-        db.delete("anotacoes", "id = "+idNota, null);
+        db.delete("OrdemServico", "id = "+idOS, null);
     }
 
-    public static final List<Cliente> listar(Context context){
-        List<Cliente> lista = new ArrayList<>();
+    public static final List<OrdemServico> listar(Context context){
+        List<OrdemServico> lista = new ArrayList<>();
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();
-        String sql = "SELECT * FROM anotacoes ORDER BY id DESC ";
+        String sql = "SELECT * FROM OrdemServico ORDER BY id DESC ";
         Cursor cursor = db.rawQuery(sql, null);
         if ( cursor.getCount() > 0 ){
             cursor.moveToFirst();
             do{
                 OrdemServico os = new OrdemServico();
                 os.setId( cursor.getInt( 0 ) );
-                os.setIdcliente( cursor.getString(1));
+                os.setIdcliente( cursor.getInt(1));
                 os.setTipoServico( cursor.getString(2));
                 os.setDataServico( cursor.getString(3));
-                os.setValor( cursor.getString(4));
+                os.setValor( cursor.getDouble(4));
                 os.setDescricao( cursor.getString(5));
 
                 lista.add(os);
