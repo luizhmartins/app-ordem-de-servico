@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
-                        MainActivity.this, CadastroOS.class);
+                        MainActivity.this, ViewCadastroOS.class);
                 startActivity(intent);
             }
         });
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getBaseContext(), "Item clicado", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(MainActivity.this, CadastroCliente.class); // criar a classe produto activity
+                Intent intent = new Intent(MainActivity.this, ViewCadastroCliente.class); // criar a classe produto activity
                 startActivity(intent);
             }
         });

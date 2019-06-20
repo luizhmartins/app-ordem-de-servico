@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,7 +17,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class ClienteActivity extends AppCompatActivity {
+public class ViewListaCliente extends AppCompatActivity {
 
     ListView lvLista;
     List<Cliente> lista;
@@ -39,7 +38,7 @@ public class ClienteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
-                        ClienteActivity.this, CadastroCliente.class);
+                        ViewListaCliente.this, ViewCadastroCliente.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +49,7 @@ public class ClienteActivity extends AppCompatActivity {
 
                 final Cliente clienteSelecionado = lista.get(position);
                 AlertDialog.Builder alerta =
-                        new AlertDialog.Builder(ClienteActivity.this);
+                        new AlertDialog.Builder(ViewListaCliente.this);
                 alerta.setTitle("Excluir Ordem de Serviço...");
                 alerta.setMessage("Confirma a exclusão da Ordem de Serviço? " +
                         clienteSelecionado.getNome() + "?");
@@ -58,7 +57,7 @@ public class ClienteActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         OrdemServicoDAO.excluir(clienteSelecionado.getId(),
-                                ClienteActivity.this);
+                                ViewListaCliente.this);
                         carregarLista();
 
                     }
@@ -77,7 +76,7 @@ public class ClienteActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getBaseContext(), "Item clicado", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(ClienteActivity.this, CadastroCliente.class); // criar a classe produto activity
+                Intent intent = new Intent(ViewListaCliente.this, ViewCadastroCliente.class); // criar a classe produto activity
                 startActivity(intent);
             }
         });

@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class CadastroCliente extends AppCompatActivity {
+public class ViewCadastroCliente extends AppCompatActivity {
 
     private EditText edtNome;
     private EditText edtTelefone;

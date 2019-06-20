@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 
-public class CadastroOS extends AppCompatActivity {
+public class ViewCadastroOS extends AppCompatActivity {
 
     private EditText edtClienteOS;
     private EditText edtTipoOS;
