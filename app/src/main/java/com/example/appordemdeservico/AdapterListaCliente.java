@@ -9,33 +9,32 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class AdapterListaOrdemServico extends BaseAdapter {
+public class AdapterListaCliente extends BaseAdapter {
 
 
     private Context context;
-    private List<OrdemServico> ordemServicos;
-    private Cliente c;
+    private List<Cliente> clientes;
     private LayoutInflater inflater;
 
-    public AdapterListaOrdemServico(Context context, List<OrdemServico> os) {
+    public AdapterListaCliente(Context context, List<Cliente> c) {
         this.context = context;
-        this.ordemServicos = os;
+        this.clientes = c;
         this.inflater = LayoutInflater.from(context);
     }
 
     @Override
     public int getCount() {
-        return ordemServicos.size();
+        return clientes.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return ordemServicos.get(position);
+        return clientes.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return ordemServicos.get(position).getId();
+        return clientes.get(position).getId();
     }
 
     @Override
@@ -44,31 +43,29 @@ public class AdapterListaOrdemServico extends BaseAdapter {
 
         if (convertView == null) {
 
-            convertView = inflater.inflate(R.layout.layout_item_os, null);
+            convertView = inflater.inflate(R.layout.layout_item_cliente, null);
             item = new Suporte();
 
-            item.tvIdOS = (TextView) convertView.findViewById(R.id.tvIdOS);
-            item.tvDescricaoOS = (TextView) convertView.findViewById(R.id.tvDescricaoOS);
-            item.tvNomeCliente = (TextView) convertView.findViewById(R.id.tvNomeCliente);
-            item.tvEnderecoCliente = (TextView) convertView.findViewById(R.id.tvEnderecoCliente);
+            item.tvNomeCliente = (TextView) convertView.findViewById(R.id.tvItemNomeCliente);
+            item.tvEnderecoCliente = (TextView) convertView.findViewById(R.id.tvEndereco);
+            item.tvTelefone = (TextView) convertView.findViewById(R.id.tvNumeroCliente);
             convertView.setTag(item);
 
         } else {
             item = (Suporte) convertView.getTag();
         }
 
-        OrdemServico os = ordemServicos.get(position);
-        item.tvIdOS.setText(String.valueOf(os.getId()));
-        item.tvDescricaoOS.setText(os.getDescricao());
+        Cliente c = clientes.get(position);
         item.tvNomeCliente.setText(c.getNome());
         item.tvEnderecoCliente.setText(c.getEndereco());
+        item.tvTelefone.setText(c.getTelefone());
 
         return convertView;
     }
 
     private class Suporte {
         //TextView tvNomeProduto, tvQtdProduto, tvValorProduto;
-        TextView tvIdOS, tvDescricaoOS, tvNomeCliente, tvEnderecoCliente;
+        TextView tvNomeCliente, tvEnderecoCliente, tvTelefone;
     }
 
 }
