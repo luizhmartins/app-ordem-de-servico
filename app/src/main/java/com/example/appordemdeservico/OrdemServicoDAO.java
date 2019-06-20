@@ -4,18 +4,19 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.system.Os;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteDAO {
+public class OrdemServicoDAO {
 
-    public static final void inserir(Cliente cliente, Context context){
+    public static final void inserir(OrdemServico os, Context context){
         Banco banco = new Banco(context);
         ContentValues valores = new ContentValues();
-        valores.put("nome", cliente.getNome() );
-        valores.put("telefone", cliente.getTelefone() );
-        valores.put("endereco", cliente.getEndereco() );
+        valores.put("cliente", os.getCliente() );
+        valores.put("tipo", os.getTipo() );
+        valores.put("data", os.getData() );
 
         SQLiteDatabase db = banco.getWritableDatabase();
         db.insert("anotacoes", null, valores);
@@ -36,15 +37,16 @@ public class ClienteDAO {
         if ( cursor.getCount() > 0 ){
             cursor.moveToFirst();
             do{
-                Cliente cliente = new Cliente();
-                cliente.setId( cursor.getInt( 0 ) );
-                cliente.setNome( cursor.getString(1));
-                cliente.setTelefone( cursor.getString(2));
-                cliente.setEndereco( cursor.getString(3));
+                OrdemServico os = new OrdemServico();
+                os.setId( cursor.getInt( 0 ) );
+                os.setCliente( cursor.getString(1));
+                os.setTipo( cursor.getString(2));
+                os.setData( cursor.getString(3));
 
-                lista.add( cliente );
+                lista.add(os);
             }while ( cursor.moveToNext() );
         }
         return lista;
     }
 }
+
