@@ -15,7 +15,7 @@ public class OrdemServicoDAO {
         ContentValues valores = new ContentValues();
         valores.put("cliente", os.getIdcliente() );
         valores.put("tipo", os.getTipoServico() );
-        valores.put("data", os.getDataServico() );
+        //valores.put("data", os.getDataServico() );
         valores.put("valor", os.getValor() );
         valores.put("descrição", os.getDescricao() );
 
@@ -29,8 +29,8 @@ public class OrdemServicoDAO {
         db.delete("anotacoes", "id = "+idNota, null);
     }
 
-    public static final List<OrdemServico> listar2(Context context){
-        List<OrdemServico> lista = new ArrayList<>();
+    public static final List<OrdemServico> listar(Context context){
+        List<OrdemServico> lista2 = new ArrayList<>();
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();
         String sql = "SELECT * FROM anotacoes ORDER BY id DESC ";
@@ -42,14 +42,14 @@ public class OrdemServicoDAO {
                 os.setId( cursor.getInt( 0 ) );
                 os.setIdcliente( cursor.getInt(1));
                 os.setTipoServico( cursor.getString(2));
-                os.setDataServico( cursor.getDouble(3));
-                os.setValor( cursor.getString(4));
+                //os.setDataServico( cursor.getDouble(3));
+                os.setValor( cursor.getDouble(4));
                 os.setDescricao( cursor.getString(5));
 
-                lista.add(os);
+                lista2.add(os);
             }while ( cursor.moveToNext() );
         }
-        return lista;
+        return lista2;
     }
 }
 

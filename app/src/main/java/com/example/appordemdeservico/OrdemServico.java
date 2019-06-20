@@ -1,13 +1,11 @@
 package com.example.appordemdeservico;
 
-import java.util.Date;
-
 public class OrdemServico {
 
     private int id;
     private int idcliente;
     private String tipoServico;
-    private Date dataServico;
+    //private Date dataServico;
     private double valor;
     private String descricao;
 
@@ -38,19 +36,19 @@ public class OrdemServico {
         this.tipoServico = tipoServico;
     }
 
-    public Date getDataServico() {
-        return dataServico;
-    }
+   // public int getDataServico() {
+        //return dataServico;
+   // }
 
-    public void setDataServico(Date dataServico) {
-        this.dataServico = dataServico;
-    }
+    //public void setDataServico(Date dataServico) {
+      //  this.dataServico = dataServico;
+    //}
 
     public double getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
@@ -60,5 +58,8 @@ public class OrdemServico {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public void setDataServico(double aDouble) {
     }
 }

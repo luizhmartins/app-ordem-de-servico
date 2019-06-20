@@ -21,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     ListView lvLista;
-    List<Cliente> lista;
+    List<OrdemServico> lista;
     ArrayAdapter adapter;
 
     @Override
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
-                        MainActivity.this, CadastroCliente.class);
+                        MainActivity.this, ActOS.class);
                 startActivity(intent);
             }
         });
@@ -48,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                final Cliente clienteSelecionado = lista.get(position);
+                final OrdemServico ordemdeservicoSelecionado = lista.get(position);
                 AlertDialog.Builder alerta =
                         new AlertDialog.Builder(MainActivity.this);
                 alerta.setTitle("Excluir Ordem de Servico...");
                 alerta.setMessage("Confirma a exclusão da Ordem de Servico " +
-                        clienteSelecionado.getNome() + "?");
+                        ordemdeservicoSelecionado.getIdcliente() + "?");
                 alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        ClienteDAO.excluir(clienteSelecionado.getId(),
+                        OrdemServicoDAO.excluir(ordemdeservicoSelecionado.getId(),
                                 MainActivity.this);
                         carregarLista();
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void carregarLista(){
 
-        lista = OrdemServicoDAO.listar2(this);
+        lista = OrdemServicoDAO.listar(this);
         adapter = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, lista );
         lvLista.setAdapter(adapter);

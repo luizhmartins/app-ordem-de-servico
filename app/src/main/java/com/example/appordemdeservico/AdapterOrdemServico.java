@@ -15,7 +15,7 @@ public class AdapterOrdemServico extends BaseAdapter {
     private List<OrdemServico> Oss;
     private LayoutInflater inflater;
 
-    public AdapterListaProduto(Context context, List<OrdemServico> Oss) {
+    public AdapterOrdemServico(Context context, List<OrdemServico> Oss) {
         this.context = context;
         this.Oss = Oss;
         this.inflater = LayoutInflater.from(context);
@@ -47,7 +47,7 @@ public class AdapterOrdemServico extends BaseAdapter {
 
             item.tvIdOS = (TextView) convertView.findViewById(R.id.tvIdOS);
             item.tvClienteOS = (TextView) convertView.findViewById(R.id.tvClienteOS);
-            item.tvDataOS = (TextView) convertView.findViewById(R.id.tvDataOS);
+           // item.tvDataOS = (TextView) convertView.findViewById(R.id.tvDataOS);
             item.tvPrecoOS= (TextView) convertView.findViewById(R.id.tvPrecoOS);
             convertView.setTag(item);
 
@@ -57,7 +57,7 @@ public class AdapterOrdemServico extends BaseAdapter {
 
         OrdemServico prod = Oss.get(position);
         item.tvIdOS.setText(String.valueOf(prod.getIdcliente()));
-        item.tvDataOS.setText((CharSequence) prod.getDataServico());
+        //item.tvDataOS.setText(prod.getDataServico());
         item.tvPrecoOS.setText(String.valueOf(prod.getValor()));
 
 
@@ -65,8 +65,8 @@ public class AdapterOrdemServico extends BaseAdapter {
     }
 
     private class Suporte {
-        TextView tvIdOS, tvClienteOS, tvDataOS, tvPrecoOS;
+        TextView tvIdOS, tvClienteOS,tvPrecoOS;
     }
 
 }
-}
+
