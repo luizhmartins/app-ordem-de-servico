@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class ViewListaCliente extends AppCompatActivity {
     ListView lvLista;
     List<Cliente> lista;
     ArrayAdapter adapter;
+    Button btnMenuOS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,14 @@ public class ViewListaCliente extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         ViewListaCliente.this, ViewCadastroCliente.class);
+                startActivity(intent);
+            }
+        });
+
+        btnMenuOS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewListaCliente.this, MainActivity.class);
                 startActivity(intent);
             }
         });
