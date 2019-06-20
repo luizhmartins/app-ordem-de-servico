@@ -14,9 +14,11 @@ public class OrdemServicoDAO {
     public static final void inserir(OrdemServico os, Context context){
         Banco banco = new Banco(context);
         ContentValues valores = new ContentValues();
-        valores.put("cliente", os.getCliente() );
-        valores.put("tipo", os.getTipo() );
-        valores.put("data", os.getData() );
+        valores.put("cliente", os.getIdcliente() );
+        valores.put("tipo", os.getTipoServico() );
+        valores.put("data", os.getDataServico() );
+        valores.put("valor", os.getValor() );
+        valores.put("descrição", os.getDescricao() );
 
         SQLiteDatabase db = banco.getWritableDatabase();
         db.insert("anotacoes", null, valores);
@@ -39,9 +41,11 @@ public class OrdemServicoDAO {
             do{
                 OrdemServico os = new OrdemServico();
                 os.setId( cursor.getInt( 0 ) );
-                os.setCliente( cursor.getString(1));
-                os.setTipo( cursor.getString(2));
-                os.setData( cursor.getString(3));
+                os.setIdcliente( cursor.getString(1));
+                os.setTipoServico( cursor.getString(2));
+                os.setDataServico( cursor.getString(3));
+                os.setValor( cursor.getString(4));
+                os.setDescricao( cursor.getString(5));
 
                 lista.add(os);
             }while ( cursor.moveToNext() );
