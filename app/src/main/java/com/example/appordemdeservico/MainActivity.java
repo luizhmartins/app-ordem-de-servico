@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnMenuOS.setOnClickListener(new View.OnClickListener() {
+/*        btnMenuOS.setOnClickListener(new  View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ViewListaCliente.class);
                 startActivity(intent);
             }
         });
-
+*/
         lvLista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
