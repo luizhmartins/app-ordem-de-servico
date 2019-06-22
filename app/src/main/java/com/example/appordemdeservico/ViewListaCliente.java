@@ -28,7 +28,7 @@ public class ViewListaCliente extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_lista_cliente);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -106,8 +106,6 @@ public class ViewListaCliente extends AppCompatActivity {
         super.onResume();
         carregarLista();
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
