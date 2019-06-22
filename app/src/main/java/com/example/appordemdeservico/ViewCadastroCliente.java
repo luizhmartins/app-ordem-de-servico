@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * Classe que permite cadastrar o cliente
+ *
+ */
 public class ViewCadastroCliente extends AppCompatActivity {
 
     private EditText edtNome;
@@ -22,7 +26,6 @@ public class ViewCadastroCliente extends AppCompatActivity {
         edtTelefone = (EditText)findViewById(R.id.edtTelefone);
         edtEndereco = (EditText)findViewById(R.id.edtEndereco);
         btnCadastro = (Button)findViewById(R.id.btnCadastro);
-
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

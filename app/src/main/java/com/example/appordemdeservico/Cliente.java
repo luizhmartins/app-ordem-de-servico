@@ -1,5 +1,10 @@
 package com.example.appordemdeservico;
 
+
+/**
+ * Classe de Domínio/Modelagem dos dados de Cliente
+ *
+ */
 public class Cliente {
 
     private int Id;

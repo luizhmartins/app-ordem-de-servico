@@ -18,6 +18,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
+/**
+ * Classe que carrega o adapter/ Lista de ordem de Serviço
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     ListView lvLista;

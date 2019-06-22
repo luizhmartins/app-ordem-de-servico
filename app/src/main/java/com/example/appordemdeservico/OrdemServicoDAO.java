@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Classe Responsável pela persistência dos dados de Ordem de Serviço
+ *
+ */
 public class OrdemServicoDAO {
 
     public static final void inserir(OrdemServico os, Context context){

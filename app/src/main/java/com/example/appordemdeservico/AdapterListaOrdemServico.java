@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
+/**
+ * Classe Responsável pela criação do Adapter de Ordem de Serviço.
+ *
+ */
 public class AdapterListaOrdemServico extends BaseAdapter {
 
 

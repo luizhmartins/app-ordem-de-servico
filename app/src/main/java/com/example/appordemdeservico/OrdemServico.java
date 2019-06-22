@@ -1,5 +1,9 @@
 package com.example.appordemdeservico;
 
+/**
+ * Classe de domínio para os dados da Ordem de Serviço.
+ *
+ */
 public class OrdemServico {
 
     private int id;

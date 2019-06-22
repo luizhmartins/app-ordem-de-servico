@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 
+/**
+ * Classe que permite o cadastro de Ordem de serviço
+ *
+ */
 public class ViewCadastroOS extends AppCompatActivity {
 
     private EditText edtClienteOS;

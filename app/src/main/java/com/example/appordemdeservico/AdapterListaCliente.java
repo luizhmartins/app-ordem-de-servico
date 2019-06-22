@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * Classe Responsável pela criação do Adapter da Lista de Clientes
+ *
+ */
+
 public class AdapterListaCliente extends BaseAdapter {
 
 

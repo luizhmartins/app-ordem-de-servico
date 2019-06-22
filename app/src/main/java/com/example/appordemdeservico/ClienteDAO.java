@@ -8,6 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe Responsável pela Persistência dos dados de Cliente
+ *
+ */
 public class ClienteDAO {
 
     public static final void inserir(Cliente cliente, Context context){
